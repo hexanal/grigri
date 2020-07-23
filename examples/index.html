@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>grigri, too!</title>
+  <meta name="description" content="the ve-very be-be-best grigrid system!">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <link rel="stylesheet" href="/dist/styles.css" />
+</head>
+
+<body class="this-is-grigri-too">
+
+  <div class="ggh-cols">
+    <div class="centered container grid col-12">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+
+      <div class="ggh-margin ggh-margin-left"></div>
+      <div class="ggh-margin ggh-margin-right"></div>
+    </div>
+  </div>
+
+  <div class="spaced container centered">
+
+    <div class="serious-grid ggh-spacing">
+      <div class="bg-yellow" data-component="box-measure">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+
+      <div class="bg-yellow" data-component="box-measure">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+
+      <div class="content">
+        <h1>Lorem ipsum dolor sit amet</h1>
+        <p>
+          Et asperiores ut maiores molestias qui quidem quis ad. Error harum odit quasi et voluptate quo. Quis sapiente eos sequi. Fugiat deserunt pariatur quo esse autem vel.
+        </p>
+        <p>
+          Officiis ipsa molestiae sed fuga enim. Dolorem maxime quis officia eum similique fuga et. Quos illum atque nemo harum. Qui eligendi et laudantium expedita aut aspernatur dicta.
+        </p>
+      </div>
+    </div>
+
+    <div class="spaced grid col-sm-4 ggh-spacing">
+      <div class="bg-orange" data-component="box-measure">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+      <div class="bg-orange" data-component="box-measure">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+      <div class="bg-orange" data-component="box-measure">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+      <div class="bg-orange" data-component="box-measure">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+
+      <div class="bg-orange" data-component="box-measure">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+      <div class="bg-orange" data-component="box-measure">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+      <div class="bg-orange" data-component="box-measure">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+      <div class="bg-orange" data-component="box-measure">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="grigri-devtool" data-component="grigri-devtool">
+    <button class="grigri-devtool__trigger" data-control="trigger" title="Open grigri's toolbox">
+      <span>✳️</span>
+    </button>
+
+    <div class="grigri-devtool__toolbox">
+
+      <section class="grigri-devtool__tweaker grid col-sm-2 col-md-3">
+        <div class="grigri-devtool__tool" data-ui="tool">
+          <div class="grigri-devtool__toggle">
+            <label>
+              <input type="checkbox" data-control="toggle-columns">
+              Show vertical columns
+            </label>
+          </div>
+          <div class="grigri-devtool__toggle">
+            <label>
+              <input type="checkbox" data-control="toggle-margins">
+              Show margins
+            </label>
+          </div>
+          <div class="grigri-devtool__toggle">
+            <label>
+              <input type="checkbox" data-control="toggle-spacing">
+              Show spacing
+            </label>
+          </div>
+        </div>
+
+        <div class="grigri-devtool__tool" data-ui="tool">
+          <div class="grigri-devtool__label">
+            <label for="gutters">
+              Gutters
+            </label>
+
+            <div class="grigri-devtool__manual">
+              <input
+                class="grigri-devtool__input"
+                type="text"
+                data-control="gutters-value"
+              >
+              rem
+            </div>
+          </div>
+
+          <input
+            id="gutters"
+            class="grigri-devtool__range"
+            type="range"
+            min="0"
+            max="4"
+            step="0.05"
+            data-control="gutters"
+          >
+        </div>
+
+        <div class="grigri-devtool__tool" data-ui="tool">
+          <div class="grigri-devtool__label">
+            <label for="margins">
+              Margins
+            </label>
+
+            <div class="grigri-devtool__manual">
+              <input
+                class="grigri-devtool__input"
+                type="text"
+                data-control="margins-value"
+              >
+              rem
+            </div>
+          </div>
+
+          <input
+            id="margins"
+            class="grigri-devtool__range"
+            type="range"
+            min="0"
+            max="10"
+            step="0.5"
+            data-control="margins"
+          >
+        </div>
+
+        <div class="grigri-devtool__tool" data-ui="tool">
+          <div class="grigri-devtool__label">
+            <label for="spacing">
+              Spacing
+            </label>
+
+            <div class="grigri-devtool__manual">
+              <input
+                class="grigri-devtool__input"
+                type="text"
+                data-control="spacing-value"
+              >
+              rem
+            </div>
+          </div>
+
+          <input
+            id="spacing"
+            class="grigri-devtool__range"
+            type="range"
+            min="0"
+            max="20"
+            step="0.5"
+            data-control="spacing"
+          >
+        </div>
+
+        <div class="grigri-devtool__tool" data-ui="tool">
+          <div class="grigri-devtool__label">
+            <label for="max-width">
+              Container Width
+            </label>
+
+            <div class="grigri-devtool__manual">
+              <input
+                class="grigri-devtool__input"
+                type="text"
+                data-control="max-width-value"
+              >
+              px
+            </div>
+          </div>
+
+          <input
+            id="max-width"
+            class="grigri-devtool__range"
+            type="range"
+            min="480"
+            max="2048"
+            step="8"
+            data-control="max-width"
+          >
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="/dist/app.js"></script>
+</body>
+</html>

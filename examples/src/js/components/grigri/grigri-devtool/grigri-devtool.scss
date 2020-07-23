@@ -1,0 +1,126 @@
+// allow animating the body to give some space
+body {
+  transition: margin-bottom 1s 500ms cubic-bezier(0,1,.6,1);
+}
+
+.grigri-devtool {
+  // these allows ANOTHER grid system to exist in parallel :)
+  --margins: 1rem;
+  --gutters: 2rem;
+  --spacing: 3.5rem;
+  --max-width: 1200px;
+  --narrow-width: 800px;
+  --wide-width: 1680px;
+  --multiplier: 3;
+  --col-width: calc( (100% - (var(--gutters) * 11) ) / 12);
+  --helper-cols-color: white;
+  --helper-lines-color: magenta;
+  --helper-spacing-color: orangered;
+  --helper-margin-color: lime;
+  --helper-opacity: 0.1;
+
+  --ease: cubic-bezier(0,1,.6,1);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  width: 100%;
+  border-top: 2px solid var(--color-subtle);
+  background-color: white;
+  transform: translateY(100%) translateY(-2px);
+  transition: transform 500ms var(--ease);
+
+  &[data-active="true"] {
+    transform: translateY(0);
+  }
+}
+
+.grigri-devtool__trigger {
+  overflow: hidden;
+  position: absolute;
+  z-index: 2;
+  left: 1.5rem;
+  bottom: 100%;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.25rem;
+  border: 2px solid var(--color-subtle);
+  border-radius: 0.5rem 0.5rem 0 0;
+  border-bottom: 0;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-subtle);
+  }
+}
+
+.grigri-devtool__toggle {
+  width: 100%;
+
+  + .grigri-devtool__toggle {
+    margin-top: 0.5rem;
+  }
+}
+
+.grigri-devtool__toolbox {
+  overflow: auto;
+}
+
+.grigri-devtool__tweaker {
+  padding: 1.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.grigri-devtool__tool {
+  label {
+    color: var(--color-subtle);
+  }
+}
+
+.grigri-devtool__label {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-subtle);
+  padding: 0.5rem 0 0;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid currentColor;;
+}
+
+.grigri-devtool__manual {
+  display: flex;
+  align-items: center;
+  width: 5rem;
+  color: var(--color-bright);
+}
+
+.grigri-devtool__input {
+  display: block;
+  width: 3rem;
+  margin-right: 0.25rem;
+  margin-bottom: -2px; // flush with label border :)
+  font-family: var(--font-plex);
+  font-weight: 500;
+  font-style: normal;
+  text-align: right;
+  color: var(--color-bright);
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-bottom: 2px solid currentColor;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    border-style: dashed;
+    border-color: currentColor;
+  }
+  &:focus {
+    border-color: orange;
+  }
+}
+
+.grigri-devtool__range {
+  display: block;
+  width: 100%;
+}

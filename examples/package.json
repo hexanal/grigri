@@ -1,0 +1,29 @@
+{
+  "name": "grigri-example",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "start": "./node_modules/webpack/bin/webpack.js --env.NODE_ENV=development --env.development --watch",
+    "build": "./node_modules/webpack/bin/webpack.js --env.NODE_ENV=production --env.production"
+  },
+  "author": "hexanal",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "closure-webpack-plugin": "^2.3.0",
+    "css-loader": "^3.5.3",
+    "exponent-core": "1.1.0",
+    "file-loader": "^6.0.0",
+    "google-closure-compiler": "^20200504.0.0",
+    "image-webpack-loader": "^6.0.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "lodash.clamp": "^4.0.3"
+  }
+}

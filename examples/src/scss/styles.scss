@@ -1,0 +1,63 @@
+@import '../../../grigri';
+@import '../../../grigri.config';
+@import '../../../grigri.helpers';
+@import 'mixins';
+
+@import '../../index.scss';
+@import '../../this-is-grigri.scss';
+
+:root {
+  --font-body: monospace;
+  --color-body: #FD9BB7;
+  --color-active: #FAB926;
+  --color-subtle: #49A57B;
+  --color-bright: #EC464A;
+  --color-midnight: #658CEE;
+  --color-flash: #C3AEF2;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-body);
+  background-color: var(--color-active);
+  background-position: 0 0;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  @include no-user-select;
+}
+
+.🔵{
+  @include no-user-select;
+  position: fixed;
+  z-index: 1;
+  top: 2rem;
+  left: -5rem;
+  font-size: 150vw;
+  line-height: 0;
+  color: white;
+  text-shadow: 0.5rem 0.5rem 0 var(--color-bright);
+}
+
+.🔴{
+  position: relative;
+  z-index: 2;
+  max-width: 42rem;
+  width: 100%;
+  margin: 10rem auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  @media (min-width: 42rem) {
+    margin: 5rem auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
