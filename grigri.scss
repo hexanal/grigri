@@ -6,13 +6,10 @@
 @mixin flex-between {
   display: flex;
   justify-content: space-between;
+  gap: initial;
 }
 
 @mixin create-col($index: 1, $span: 12) {
-  > div {
-    width: 100%;
-    margin-top: var(--gutters);
-  }
   > div:nth-child(#{$index}) {
     width: calc(var(--col-width) * #{$span} + ( #{$span - 1} * var(--gutters) ) );
     margin-top: 0;
@@ -25,6 +22,11 @@
   }
 }
 
+@mixin stack {
+  display: grid;
+  gap: var(--spacing);
+}
+
 @mixin two-cols($one, $two, $breakpoint: false) {
   @if $breakpoint {
     @media (min-width: $breakpoint) {
@@ -33,6 +35,11 @@
     }
   }
   @else {
+    > div {
+      width: 100%;
+      margin-top: var(--gutters);
+    }
+
     @include flex-between;
     @include create-cols(($one, $two));
   }
@@ -46,6 +53,11 @@
     }
   }
   @else {
+    > div {
+      width: 100%;
+      margin-top: var(--gutters);
+    }
+
     @include flex-between;
     @include create-cols(($one, $two, $three));
   }

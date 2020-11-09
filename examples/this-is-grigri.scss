@@ -4,7 +4,8 @@
 }
 
 .hello-world-grid {
-  @include three-cols(4, 4, 4);
+  @include stack;
+  @include three-cols(4, 4, 4, $mq-sm);
   @include three-cols(3, 6, 3, $mq-md); // shorthand :)
 }
 
