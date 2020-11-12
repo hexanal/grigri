@@ -1,102 +1,69 @@
-/**
- * ——————
- * grigri
- * ——————
- */
-@mixin flex-between {
-  display: flex;
-  justify-content: space-between;
-  gap: initial;
-}
+/* The infamous "breakpoints" */
 
-@mixin create-col($index: 1, $span: 12) {
-  > div:nth-child(#{$index}) {
-    width: calc(var(--col-width) * #{$span} + ( #{$span - 1} * var(--gutters) ) );
-    margin-top: 0;
+$mq-xs: 500px;
+$mq-sm: 700px;
+$mq-md: 1000px;
+$mq-lg: 1200px;
+$mq-xl: 1440px;
+$mq-xxl: 1920px;
+
+/* Some variables to set the stage */
+
+:root {
+  --max-width: 1200px;
+  --narrow-width: 800px;
+  --wide-width: 1680px;
+
+  --margins: 1rem;
+  --gutters: 0.75rem;
+  --spacing: 3.5rem;
+
+  --col-width: calc( (100% - (var(--gutters) * 11) ) / 12);
+
+  --helper-cols-color: hotpink;
+  --helper-lines-color: magenta;
+  --helper-spacing-color: orangered;
+  --helper-margin-color: lime;
+  --helper-opacity: 0.5;
+
+  @media (min-width: $mq-sm) {
+    --margins: 2rem;
+    --gutters: 1rem;
   }
-}
-@mixin create-cols($cols: (6, 6) ) { // provide a default for context -> this creates two columns each spanning 6 columns
-  @for $i from 1 through length($cols) {
-    $span: nth($cols, $i);
-    @include create-col($i, $span);
-  }
-}
 
-@mixin stack {
-  display: grid;
-  gap: var(--spacing);
-}
-
-@mixin two-cols($one, $two, $breakpoint: false) {
-  @if $breakpoint {
-    @media (min-width: $breakpoint) {
-      @include flex-between;
-      @include create-cols(($one, $two));
-    }
-  }
-  @else {
-    > div {
-      width: 100%;
-      margin-top: var(--gutters);
-    }
-
-    @include flex-between;
-    @include create-cols(($one, $two));
+  @media (min-width: $mq-xl) {
+    --margins: 4rem;
+    --gutters: 1.5rem;
   }
 }
 
-@mixin three-cols($one, $two, $three, $breakpoint: false) {
-  @if $breakpoint {
-    @media (min-width: $breakpoint) {
-      @include flex-between;
-      @include create-cols(($one, $two, $three));
-    }
-  }
-  @else {
-    > div {
-      width: 100%;
-      margin-top: var(--gutters);
-    }
 
-    @include flex-between;
-    @include create-cols(($one, $two, $three));
-  }
+/* A handful of mixins */
+
+@function grigri-width($number-of-columns) {
+  @return calc(var(--col-width) * #{$number-of-columns} + ( #{$number-of-columns - 1} * var(--gutters) ) );
 }
 
-@mixin makeGridColsForBreakpoint($string: false, $breakpoint: false) {
-  @if $breakpoint {
-    @for $i from 2 through 12 {
-      .col-#{$string}-#{$i} {
-        @media (min-width: $breakpoint) {
-          grid-template-columns: repeat($i, 1fr);
-        }
-      }
-    }
-  }
-  @else {
-    @for $i from 2 through 12 {
-      .col-#{$i} { grid-template-columns: repeat($i, 1fr); }
-    }
-  }
+@mixin grigri-width-cols($number-of-columns) {
+  width: grigri-width($number-of-columns);
 }
 
-@mixin makeGridMarginsForBreakpoint($string: false, $breakpoint: false) {
-  @if $breakpoint {
-    @for $i from 2 through 12 {
-      .margin-#{$string}-#{$i} {
-        @media (min-width: $breakpoint) {
-          padding-left: calc(var(--margins) * #{$i} + var(--gutters) * #{$i - 1});
-          padding-right: calc(var(--margins) * #{$i} + var(--gutters) * #{$i - 1});
-        }
-      }
-    }
-  }
-  @else {
-    @for $i from 2 through 12 {
-      .margin-#{$i} {
-        padding-left: calc(var(--margins) * #{$i} + var(--gutters) * #{$i - 1});
-        padding-right: calc(var(--margins) * #{$i} + var(--gutters) * #{$i - 1});
-      }
-    }
-  }
-}
+
+/* A bunch of variables to set widths */
+
+$col-half: grigri-width(6);
+$col-third: grigri-width(4);
+$col-quarter: grigri-width(3);
+
+$col-1: grigri-width(1);
+$col-2: grigri-width(2);
+$col-3: grigri-width(3);
+$col-4: grigri-width(4);
+$col-5: grigri-width(5);
+$col-6: grigri-width(6);
+$col-7: grigri-width(7);
+$col-8: grigri-width(8);
+$col-9: grigri-width(9);
+$col-10: grigri-width(10);
+$col-11: grigri-width(11);
+$col-12: grigri-width(12);
