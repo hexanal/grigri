@@ -29,10 +29,10 @@
   width: var(--margins);
   background-color: var(--helper-margin-color);
 
-  display: none;
-  html[data-show-margins="true"] & {
-    display: block;
-  }
+  // display: none;
+  // html[data-show-margins="true"] & {
+  //   display: block;
+  // }
 }
 .ggh-margin-right,
 .grigri-helper-margin-right {
