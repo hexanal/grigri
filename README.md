@@ -2,7 +2,26 @@
 
 **grigri** is a set of utility classes, mixins, and variables to build grid-like layouts.
 
-## Getting started
+## Demo / Examples / Documentation
+
+- go to `examples`, install the packages, and run the default script
+
+```
+$ cd examples
+$ npm i
+$ npm start
+```
+
+- whip up a server to open `index.html`
+
+```
+$ npm i -g http-server
+$ http-server
+```
+
+- see you on [127.0.0.1:8080](http://127.0.0.1:8080)
+
+## How-To
 
 - look into the `grigri.classes.scss` for an overview of all the classes
 
@@ -28,29 +47,9 @@
   - use `.spacing-2` / `.spacing-3` / `.spacing-4` to select different margin sizes
 - you can also use `.spacing-top` or `.spacing-bottom`, those should be self-explanatory
 
-## Grid
+### Grid
 
 - use `.grid` to enable a grid layout (it uses `display: grid` and adds *gutters*)
   - to display **4 items** on a row, use `.grid-4`
   - to display them only once we hit the `$mq-md` breakpoint, use `.grid-md-4`
   - to display **3items**, use `.grid-3`, and so on...
-
-## Demo / Examples / Documentation
-
-- go to `examples`, install the packages, and run the default script
-
-```
-$ cd examples
-$ npm i
-$ npm start
-```
-
-- whip up a server to open `index.html`
-
-```
-$ npm i -g http-server
-$ http-server
-```
-
-- see you on [127.0.0.1:8080](http://127.0.0.1:8080)
-
