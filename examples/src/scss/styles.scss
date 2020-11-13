@@ -1,14 +1,11 @@
 @import '../../../grigri';
-@import '../../../grigri.config';
+@import '../../../grigri.classes';
 @import '../../../grigri.helpers';
 @import 'mixins';
 
-@import '../../index.scss';
-@import '../../this-is-grigri.scss';
-
 :root {
-  --font-body: monospace;
-  --color-body: #FD9BB7;
+  --font-body: "Helvetica Neue", Helvetica, sans-serif;
+  --color-body: #313131;
   --color-active: #FAB926;
   --color-subtle: #49A57B;
   --color-bright: #EC464A;
@@ -19,10 +16,7 @@
 body {
   font-family: var(--font-body);
   color: var(--color-body);
-  background-color: var(--color-active);
-  background-position: 0 0;
-  background-size: cover;
-  background-attachment: fixed;
+  background-color: #fafbfc;
 }
 
 * {
@@ -33,18 +27,6 @@ img {
   @include no-user-select;
 }
 
-.🔵{
-  @include no-user-select;
-  position: fixed;
-  z-index: 1;
-  top: 2rem;
-  left: -5rem;
-  font-size: 150vw;
-  line-height: 0;
-  color: white;
-  text-shadow: 0.5rem 0.5rem 0 var(--color-bright);
-}
-
 .🔴{
   position: relative;
   z-index: 2;
@@ -53,6 +35,7 @@ img {
   margin: 10rem auto;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+  font-size: 1.25rem;
 
   @media (min-width: 42rem) {
     margin: 5rem auto;
@@ -61,3 +44,94 @@ img {
   }
 }
 
+.i {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.i--short {
+  height: 256px;
+}
+
+.this-is-grigri {
+  line-height: 1.5;
+
+  h1, h2, h3, h4, h5 {
+    position: relative;
+    font-weight: bold;
+    text-transform: lowercase;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 0;
+      width: 2em;
+      height: 2em;
+      background-color: powderblue;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  h1 {
+    font-size: 3.25rem;
+    letter-spacing: -0.05rem;
+
+    @media (min-width: $mq-sm) {
+      font-size: 5rem;
+    }
+  }
+  h2 {
+    font-size: 2.5rem;
+    letter-spacing: -0.05rem;
+
+    &:before { background-color: yellow; }
+  }
+  h3 {
+    font-size: 1.5rem;
+    letter-spacing: -0.05rem;
+
+    &:before { background-color: lavender; }
+  }
+
+  p {
+    font-size: 1.15rem;
+
+    + p {
+      margin-top: 2rem;
+    }
+  }
+
+  ol,
+  ul {
+    margin: 2rem 0;
+    padding-left: 1.5rem;
+    font-size: 1.15rem;
+  }
+
+  li + li {
+    margin-top: 1rem;
+  }
+
+  dd {
+    margin: 0.75rem 0 2.5rem 2.5rem;
+
+    &:before {
+      content: '→ ';
+      color: var(--color-midnight);
+    }
+  }
+
+  code {
+    padding: 0.1rem 0.3rem;
+    font-size: 1.25rem;
+    color: var(--color-midnight);
+    border: 2px solid currentColor;
+    border-radius: 4px;
+    background-color: white;
+    white-space: nowrap;
+  }
+}
