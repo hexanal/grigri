@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>grigri!</title>
-  <meta name="description" content="the ve-very be-be-best grigrid system!">
+  <title>grigri</title>
+  <meta name="description" content="putting things in boxes">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
   <link rel="stylesheet" href="/dist/styles.css" />
 
@@ -15,10 +15,10 @@
   <div class="container spacing">
     <h1 class="spacing-top">Welcome</h1>
     <p>
-      <i>grigri</i> is just a bunch of
-      <span style="background-color: powderblue;">utility classes</span>,
-      <span style="background-color: lavender;">mixins</span>, and
-      <span style="background-color: yellow;">helpers</span>
+      <strong>grigri</strong> is just a bunch of
+      <i style="padding: 0.1rem 0.25rem; background-color: powderblue;">utility classes</i>,
+      <i style="padding: 0.1rem 0.25rem; background-color: lavender;">mixins</i>, and
+      <i style="padding: 0.1rem 0.25rem; background-color: yellow;">helpers</i>
       that help with building a grid system.
     </p>
   </div>
@@ -38,20 +38,63 @@
     <h2>How to use</h2>
     <p>It's super similar to Bootstrap; but it's just about the "grid".</p>
     <p>The blocks you see above were built using:</p>
-    <ul>
+    <ol>
       <li>a div with a <code>.container</code> class <em>(classic!)</em></li>
       <li>a child div with a <code>.row</code> class <em>(easy!)</em></li>
       <li>
         two children divs with <code>.col-6</code> classes, and then one of them has a <code>.col-lg-4</code> class to make it smaller on <em>large</em> screens.
-        <br>
-        The other one has a <code>.col-lg-6</code> to fill the remainder space!
+        <ul>
+          <li>The other one has a <code>.col-lg-6</code> to fill the remainder space!</li>
+        </ul>
       </li>
-    </ul>
+    </ol>
     <p>We're using the 12-columns system here. <button type="button" id="show-cols">Show me the columns!</button></p>
   </div>
 
   <div class="container spacing">
-    <h2>Two files:</h2>
+    <h2>Need a quick grid?</h2>
+
+    <p>We have a list of elements. Let's say we want rows of two items on mobile, four items when we hit our <code>$mq-md</code> breakpoint, and six (!) from our <code>$mq-xxl</code> breakpoint.</p>
+    <h3>it's simple</h3>
+    <p>On the parent element:</p>
+    <ol>
+      <li>add a <code>.grid-2</code> class: that's the default, applied on the smallest screens and onwards</li>
+      <li>add a <code>.grid-md-4</code> class</li>
+      <li>add a <code>.grid-xxl-6</code> class</li>
+    </ol>
+    <p>And then, let the children items gently adopt their God-given dimensions!</p>
+    <p>Other classes I've added to show more features:</p>
+    <ul>
+        <li><code>.narrow</code> on the container div to make it... narrower</li>
+        <li><code>.no-gutters</code> because we're not using gutter space for this grid</li>
+    </ul>
+  </div>
+
+  <div class="container narrow spacing">
+    <div class="no-gutters grid-2 grid-md-4 grid-xxl-6">
+      <div style="background-color: salmon;">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+      <div style="background-color: steelblue;">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+      <div style="background-color: salmon;">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+      <div style="background-color: lavender;">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+      <div style="background-color: powderblue;">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+      <div style="background-color: salmon;">
+        <img class="i" src="/dist/assets/images/box.svg">
+      </div>
+    </div>
+  </div>
+
+  <div class="container spacing">
+    <h2>It's in two files:</h2>
 
     <div class="grid-md-2">
       <div>

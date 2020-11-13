@@ -103,6 +103,19 @@
   .grid-xl-7 { display: grid; grid-gap: var(--gutters); grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; }
 }
 
+@media (min-width: $mq-xxl) {
+  .grid-xxl-2 { display: grid; grid-gap: var(--gutters); grid-template-columns: 1fr 1fr; }
+  .grid-xxl-3 { display: grid; grid-gap: var(--gutters); grid-template-columns: 1fr 1fr 1fr; }
+  .grid-xxl-4 { display: grid; grid-gap: var(--gutters); grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .grid-xxl-5 { display: grid; grid-gap: var(--gutters); grid-template-columns: 1fr 1fr 1fr 1fr 1fr; }
+  .grid-xxl-6 { display: grid; grid-gap: var(--gutters); grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; }
+  .grid-xxl-7 { display: grid; grid-gap: var(--gutters); grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; }
+}
+
+.no-gutters {
+  --gutters: 0;
+}
+
 /* Declinations: did we need Sass mixins here? hells no */
 
 .col-1 { width: $col-1; }

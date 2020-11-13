@@ -16,9 +16,7 @@
 body {
   font-family: var(--font-body);
   color: var(--color-body);
-  background-position: 0 0;
-  background-size: cover;
-  background-attachment: fixed;
+  background-color: #fafbfc;
 }
 
 * {
@@ -47,6 +45,7 @@ img {
 }
 
 .i {
+  display: block;
   width: 100%;
   height: 100%;
 }
@@ -106,6 +105,7 @@ img {
     }
   }
 
+  ol,
   ul {
     margin: 2rem 0;
     padding-left: 1.5rem;
@@ -129,8 +129,9 @@ img {
     padding: 0.1rem 0.3rem;
     font-size: 1.25rem;
     color: var(--color-midnight);
-    border: 1px solid currentColor;
+    border: 2px solid currentColor;
     border-radius: 4px;
+    background-color: white;
     white-space: nowrap;
   }
 }
