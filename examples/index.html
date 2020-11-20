@@ -23,7 +23,7 @@
     </p>
   </div>
 
-  <div class="container spacing">
+  <div class="container spacing customize">
     <div class="row">
       <div class="col-6 col-lg-4" style="background: yellow;">
         <img class="i i--short" src="/dist/assets/images/box.svg">
@@ -32,6 +32,62 @@
         <img class="i i--short" src="/dist/assets/images/box.svg">
       </div>
     </div>
+  </div>
+
+  <div class="container spacing customize-controls">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Container variant</h2>
+        <div>
+          <label>
+            <input type="radio" name="variant[]" value="narrow" data-input="variant">
+            <code>.container.narrow</code>
+          </label>
+          <label>
+            <input type="radio" name="variant[]" value="none" data-input="variant" selected>
+            <code>.container</code>
+          </label>
+          <label>
+            <input type="radio" name="variant[]" value="wide" data-input="variant">
+            <code>.container.wide</code>
+          </label>
+        </div>
+
+        <div>
+          <label>
+            <input type="checkbox" name="flush" data-input="flush">
+            <code>.container.flush</code>
+          </label>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <h2>Container spacing</h2>
+        <label>
+          <input type="radio" name="spacing[]" value="none" data-input="spacing">
+          <code>.container</code>
+        </label>
+        <label>
+          <input type="radio" name="spacing[]" value="spacing" data-input="spacing" selected>
+          <code>.container.spacing</code>
+        </label>
+        <label>
+          <input type="radio" name="spacing[]" value="spacing-2" data-input="spacing">
+          <code>.container.spacing-2</code>
+        </label>
+        <label>
+          <input type="radio" name="spacing[]" value="spacing-3" data-input="spacing">
+          <code>.container.spacing-3</code>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="container customize-btn">
+    <button type="button" id="show-customize">
+      <i>change it up!</i>
+      <i>ok, enough...</i>
+    </button>
   </div>
 
   <div class="container spacing">
@@ -148,12 +204,12 @@
 
     <p>To set it up, we first have <em>breakpoints</em>, here are the default ones:</p>
     <ul>
-      <li><code>$mq-xs: 500px;</code></li>
-      <li><code>$mq-sm: 700px;</code></li>
-      <li><code>$mq-md: 1000px;</code></li>
-      <li><code>$mq-lg: 1200px;</code></li>
-      <li><code>$mq-xl: 1440px;</code></li>
-      <li><code>$mq-xxl: 1920px;</code></li>
+      <li><code>$mq-xs: 500px</code></li>
+      <li><code>$mq-sm: 700px</code></li>
+      <li><code>$mq-md: 1000px</code></li>
+      <li><code>$mq-lg: 1200px</code></li>
+      <li><code>$mq-xl: 1440px</code></li>
+      <li><code>$mq-xxl: 1920px</code></li>
     </ul>
 
     <h3>Configurable</h3>
@@ -161,25 +217,25 @@
     <p>We're also leveraging the awesome power of <em>CSS variables</em>. Here's what we got:</p>
 
     <dl>
-      <dt><code>--max-width: 1200px;</code></dt>
+      <dt><code>--max-width: 1200px</code></dt>
       <dd>that's the width of the main container column</dd>
 
-      <dt><code>--narrow-width: 800px;</code></dt>
+      <dt><code>--narrow-width: 800px</code></dt>
       <dd>that's the one used in the <code>container narrow</code> class combo</dd>
 
-      <dt><code>--wide-width: 1680px;</code></dt>
+      <dt><code>--wide-width: 1680px</code></dt>
       <dd>same as above, but for <code>container wide</code></dd>
 
-      <dt><code>--margins: 1rem;</code></dt>
+      <dt><code>--margins: 1rem</code></dt>
       <dd>the side margins, around the container (we can ignore those by using the <code>container flush</code> combo)</dd>
 
-      <dt><code>--gutters: 0.75rem;</code></dt>
+      <dt><code>--gutters: 0.75rem</code></dt>
       <dd>spacing between columns, and between items inside a <code>grid</code> class</dd>
 
-      <dt><code>--spacing: 3.5rem;</code></dt>
+      <dt><code>--spacing: 3.5rem</code></dt>
       <dd>unit of vertical spacing</dd>
 
-      <dt><code>--col-width: calc( (100% - (var(--gutters) * 11) ) / 12);</code></dt>
+      <dt><code>--col-width: calc( (100% - (var(--gutters) * 11) ) / 12)</code></dt>
       <dd>calculated width of a single column (a.k.a. column unit)</dd>
     </dl>
 
@@ -187,11 +243,11 @@
 
     <p>What about those?</p>
     <ul>
-      <li><code>--helper-cols-color: white;</code></td><td></li>
-      <li><code>--helper-lines-color: magenta;</code></td><td></li>
-      <li><code>--helper-spacing-color: orangered;</code></td><td></li>
-      <li><code>--helper-margin-color: lime;</code></td><td></li>
-      <li><code>--helper-opacity: 0.5;</code></td><td></li>
+      <li><code>--helper-cols-color: white</code></td><td></li>
+      <li><code>--helper-lines-color: magenta</code></td><td></li>
+      <li><code>--helper-spacing-color: orangered</code></td><td></li>
+      <li><code>--helper-margin-color: lime</code></td><td></li>
+      <li><code>--helper-opacity: 0.5</code></td><td></li>
     </ul>
     <p>Don't worry about them for now...</p>
   </div>
@@ -314,6 +370,48 @@ showColumnsBtn.addEventListener('click', e => {
 
   document.documentElement.dataset.showColumns = toggle;
 });
+
+const showCustomize = document.querySelector('#show-customize');
+const customizeControls = document.querySelector('.customize-controls');
+const customizeBtn = document.querySelector('.customize-btn');
+showCustomize.addEventListener('click', e => {
+  const showing = customizeControls.dataset.show;
+  const toggle = !showing || showing === 'false' ? true : false;
+
+  customizeControls.dataset.show = toggle;
+  customizeBtn.dataset.show = toggle;
+});
+
+const customize = document.querySelector('.customize');
+const variantChooser = document.querySelectorAll('[data-input="variant"]');
+let currentVariant = 'none';
+variantChooser.forEach(chooser => chooser.addEventListener('change', e => {
+  const newVariant = e.target.value;
+  customize.classList.remove(currentVariant);
+
+  if (newVariant !== 'none') customize.classList.add(newVariant);
+
+  currentVariant = newVariant;
+}) );
+
+const flush = document.querySelector('[data-input="flush"]');
+flush.addEventListener('change', e => {
+  const toggle = e.target.checked;
+  customize.classList.toggle('flush', toggle);
+});
+
+const spacingChooser = document.querySelectorAll('[data-input="spacing"]');
+let currentSpacing = 'spacing';
+spacingChooser.forEach(chooser => chooser.addEventListener('click', e => {
+  const newSpacing = e.target.value;
+  customize.classList.remove(currentSpacing);
+
+  if (newSpacing !== 'none') customize.classList.add(newSpacing);
+
+  currentSpacing = newSpacing;
+}) );
+
+
 </script>
 
 </body>

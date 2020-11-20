@@ -170,3 +170,38 @@ img {
     }
   }
 }
+
+.customize {
+  position: relative;
+
+  button {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.customize-btn {
+  text-align: right;
+
+  i:nth-child(2) {
+    display: none;
+  }
+
+  &[data-show=true] {
+    i:nth-child(1) { display: none; }
+    i:nth-child(2) { display: inline; }
+  }
+}
+
+.customize-controls {
+  display: none;
+
+  &[data-show=true] {
+    display: block;
+  }
+
+  label {
+    display: block;
+    margin-top: 1rem;
+  }
+}
