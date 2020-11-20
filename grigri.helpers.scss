@@ -1,3 +1,5 @@
+// TODO WIP
+
 .ggh-cols, // alias for those who love it SHORT & SWEET
 .grigri-helper-cols {
   pointer-events: none;
@@ -14,11 +16,69 @@
     height: 100%;
   }
 
+
+
   display: none;
   html[data-show-columns="true"] & {
     display: block;
   }
 }
+
+
+@mixin show-spacing {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  z-index: 11;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: var(--spacing);
+  opacity: 0.25;
+  background-color: var(--helper-spacing-color);
+}
+
+html[data-show-columns="true"] {
+  .spacing,
+  .spacing-2,
+  .spacing-3 {
+    position: relative; // might fuck shit up?
+
+    &:before,
+    &:after {
+      @include show-spacing;
+    }
+    &:after {
+      bottom: unset;
+      top: 100%;
+    }
+  }
+  .spacing-2 {
+    &:before, &:after { height: calc(var(--spacing) * 2); }
+  }
+  .spacing-3 {
+    &:before, &:after { height: calc(var(--spacing) * 3); }
+  }
+  .spacing-top, .spacing-top-2, .spacing-top-3 {
+    &:before { @include show-spacing; }
+  }
+  .spacing-top-2 {
+    &:before { height: calc(var(--spacing) * 2); }
+  }
+  .spacing-top-3 {
+    &:before { height: calc(var(--spacing) * 3); }
+  }
+  .spacing-bottom, .spacing-bottom-2, .spacing-bottom-3 {
+    &:after { @include show-spacing; }
+  }
+  .spacing-bottom-2 {
+    &:after { height: calc(var(--spacing) * 2); }
+  }
+  .spacing-bottom-3 {
+    &:after { height: calc(var(--spacing) * 3); }
+  }
+}
+
 
 .ggh-margin, // alias
 .grigri-helper-margin {
@@ -44,24 +104,7 @@
 .grigri-helper-spacing {
   position: relative;
 
-  &:before,
-  &:after {
-    display: none;
-    content: '';
-    pointer-events: none;
-    position: absolute;
-    z-index: 11;
-    bottom: 100%;
-    left: 0;
-    width: 100%;
-    height: var(--spacing);
-    opacity: 0.25;
-    background-color: var(--helper-spacing-color);
-  }
-  &:after {
-    bottom: unset;
-    top: 100%;
-  }
+
 
   html[data-show-spacing="true"] & {
     &:before,

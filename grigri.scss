@@ -20,11 +20,11 @@ $mq-xxl: 1920px;
 
   --col-width: calc( (100% - (var(--gutters) * 11) ) / 12);
 
-  --helper-cols-color: hotpink;
-  --helper-lines-color: magenta;
-  --helper-spacing-color: orangered;
-  --helper-margin-color: lime;
-  --helper-opacity: 0.5;
+  --helper-cols-color: lavender;
+  --helper-lines-color: steelblue;
+  --helper-spacing-color: yellow;
+  --helper-margin-color: powderblue;
+  --helper-opacity: 0.25;
 
   @media (min-width: $mq-sm) {
     --margins: 2rem;

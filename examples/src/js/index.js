@@ -1,14 +1,3 @@
-import Exponent from 'exponent-core';
-
+// js to import assets and CSS only? why not?
 import '../scss/styles.scss';
 import '../assets/images/box.svg';
-
-import grigriDevtool from 'components/grigri/grigri-devtool/grigri-devtool';
-
-Exponent
-  .register({
-    'grigri-devtool': grigriDevtool,
-  })
-  .autoload([ scroll ])
-  .mount(document);
-
