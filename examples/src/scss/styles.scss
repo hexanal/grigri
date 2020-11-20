@@ -5,6 +5,7 @@
 
 :root {
   --font-body: "Helvetica Neue", Helvetica, sans-serif;
+  --color-bg: #fafbfc;
   --color-body: #313131;
   --color-active: #FAB926;
   --color-subtle: #49A57B;
@@ -14,9 +15,10 @@
 }
 
 body {
+  font-size: 16px;
   font-family: var(--font-body);
   color: var(--color-body);
-  background-color: #fafbfc;
+  background-color: var(--color-bg);
 }
 
 * {
@@ -129,13 +131,42 @@ img {
     }
   }
 
-  code {
+  code,
+  button {
     padding: 0.1rem 0.3rem;
-    font-size: 1.25rem;
+    font-size: 1rem;
     color: var(--color-midnight);
     border: 2px solid currentColor;
     border-radius: 4px;
     background-color: white;
     white-space: nowrap;
+  }
+
+  button {
+    padding: 0.3rem 0.6rem;
+    font-family: monospace;
+    font-style: italic;
+    color: var(--color-subtle);
+    transition: margin 250ms ease-in-out, padding 250ms ease-in-out;
+    outline: 2px solid transparent;
+    border-radius: 0;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: var(--color-bg);
+      background-color: var(--color-subtle);
+      border: 2px solid var(--color-bg);
+      outline: 2px solid var(--color-subtle);
+    }
+    &:hover {
+      background-color: var(--color-flash);
+      outline: 2px solid var(--color-flash);
+    }
+    &:active {
+      padding: 0.6rem 0.3rem;
+      margin: -0.3rem 0.3rem;
+      transition: margin 20ms ease-in-out, padding 20ms ease-in-out;
+    }
   }
 }
