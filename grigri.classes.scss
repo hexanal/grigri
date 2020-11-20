@@ -53,6 +53,7 @@
   grid-gap: var(--gutters);
 }
 
+// mixins? what's a mixin?
 .grid { display: grid; grid-gap: var(--gutters); }
 .grid-2 { display: grid; grid-gap: var(--gutters); grid-template-columns: 1fr 1fr; }
 .grid-3 { display: grid; grid-gap: var(--gutters); grid-template-columns: 1fr 1fr 1fr; }
