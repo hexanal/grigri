@@ -4,6 +4,10 @@
 
 ## Demo / Examples / Documentation
 
+[Live Demo](https://fredmercy.ca/files/grigri)
+
+To test on your local machine:
+
 - go to `examples`, install the packages, and run the default script
 
 ```
@@ -21,7 +25,7 @@ $ http-server
 
 - see you on [127.0.0.1:8080](http://127.0.0.1:8080)
 
-## How-To
+## What's included?
 
 - look into the `grigri.classes.scss` for an overview of all the classes
 
