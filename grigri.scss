@@ -1,5 +1,4 @@
 /* The infamous "breakpoints" */
-
 $mq-xs: 500px;
 $mq-sm: 700px;
 $mq-md: 1000px;
@@ -8,7 +7,6 @@ $mq-xl: 1440px;
 $mq-xxl: 1920px;
 
 /* Some variables to set the stage */
-
 :root {
   --max-width: 1200px;
   --narrow-width: 800px;
@@ -19,12 +17,6 @@ $mq-xxl: 1920px;
   --spacing: 3.5rem;
 
   --col-width: calc( (100% - (var(--gutters) * 11) ) / 12);
-
-  --helper-cols-color: lavender;
-  --helper-lines-color: steelblue;
-  --helper-spacing-color: yellow;
-  --helper-margin-color: powderblue;
-  --helper-opacity: 0.25;
 
   @media (min-width: $mq-sm) {
     --margins: 2rem;
@@ -37,9 +29,7 @@ $mq-xxl: 1920px;
   }
 }
 
-
 /* A handful of mixins */
-
 @function grigri-width($number-of-columns) {
   @return calc(var(--col-width) * #{$number-of-columns} + ( #{$number-of-columns - 1} * var(--gutters) ) );
 }
@@ -48,9 +38,7 @@ $mq-xxl: 1920px;
   width: grigri-width($number-of-columns);
 }
 
-
 /* A bunch of variables to set widths */
-
 $col-half: grigri-width(6);
 $col-third: grigri-width(4);
 $col-quarter: grigri-width(3);

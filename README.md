@@ -2,32 +2,13 @@
 
 **grigri** is a set of utility classes, mixins, and variables to build grid-like layouts.
 
-## Demo / Examples / Documentation
+## Demo
 
 [Live Demo](https://fredmercy.ca/files/grigri)
 
-To test on your local machine:
-
-- go to `examples`, install the packages, and run the default script
-
-```
-$ cd examples
-$ npm i
-$ npm start
-```
-
-- whip up a server to open `index.html`
-
-```
-$ npm i -g http-server
-$ http-server
-```
-
-- see you on [127.0.0.1:8080](http://127.0.0.1:8080)
+> this includes "helpers", which I've removed from this repo (I will eventually update the example page)
 
 ## What's included?
-
-- look into the `grigri.classes.scss` for an overview of all the classes
 
 ### Centering
 
@@ -43,17 +24,17 @@ $ http-server
 - use the boostrap-like classes you know (and love?) to make columns happen:
   - a `.row` class on the parent element
   - a set of `.col` classes, e.g. `<div class="col col-sm-6 col-lg-3">...</div>`
-- use a `.no-gutters` class to ignore the space between the items (this effectively breaks from the grid
-
-### Vertical spacing
-
-- use `.spacing` to add margins (top & bottom) to an element, which uses the variable `var(--spacing)`
-  - use `.spacing-2` / `.spacing-3` / `.spacing-4` to select different margin sizes
-- you can also use `.spacing-top` or `.spacing-bottom`, those should be self-explanatory
+- use a `.no-gutters` class to ignore the space between the items (this effectively breaks from the grid's "rhythm")
 
 ### Grid
 
 - use `.grid` to enable a grid layout (it uses `display: grid` and adds *gutters*)
   - to display **4 items** on a row, use `.grid-4`
   - to display them only once we hit the `$mq-md` breakpoint, use `.grid-md-4`
-  - to display **3items**, use `.grid-3`, and so on...
+  - to display **3 items**, use `.grid-3`, and so on... easy
+
+### Vertical spacing
+
+- use `.spacing` to add margins (top & bottom) to an element, which uses the variable `var(--spacing)`
+  - use `.spacing-2` / `.spacing-3` / `.spacing-4` to select different margin sizes
+- you can also use `.spacing-top` or `.spacing-bottom`, with the same number modifiers
