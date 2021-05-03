@@ -1,4 +1,4 @@
-# grigri
+# grigri -> v0.4.20
 
 **grigri** is a set of utility classes, mixins, and variables to build grid-like layouts.
 
